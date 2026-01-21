@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cathy Sparks | VP/GM Greater China | Nike</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #111;
+            background: #f5f5f5;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #111 0%, #333 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 69 32"><path fill="rgba(255,255,255,0.03)" d="M68.56 4.05C57.32 9.05 40.4 17.65 23.93 24.86C14.42 29.05 2.63 32.04 0 29.21C-1.26 27.79 0.4 24.93 2.95 21.72C2.16 22.21 1.42 22.77 0.73 23.38C-1.71 25.84 -0.37 29.53 5.77 28.38C11.4 27.32 18.68 24.15 26.61 20.62C44.28 12.8 64.97 3.15 68.56 4.05Z"/></svg>') no-repeat center;
+            background-size: 400px;
+            opacity: 0.5;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header svg {
+            height: 40px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .header .title {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.7;
+            margin-top: 8px;
+        }
+
+        .nav-back {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .nav-back:hover {
+            opacity: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .profile-section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .section-header {
+            background: #111;
+            color: white;
+            padding: 20px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-header .icon {
+            font-size: 1.3rem;
+        }
+
+        .bilingual-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        @media (max-width: 768px) {
+            .bilingual-content {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        .lang-column {
+            padding: 30px;
+        }
+
+        .lang-column.en {
+            border-right: 1px solid #eee;
+        }
+
+        @media (max-width: 768px) {
+            .lang-column.en {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+        }
+
+        .lang-label {
+            display: inline-block;
+            background: #111;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .lang-column p {
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+
+        .lang-column h3 {
+            font-size: 1.1rem;
+            margin: 25px 0 15px 0;
+            color: #111;
+            border-left: 3px solid #111;
+            padding-left: 12px;
+        }
+
+        .lang-column h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .timeline {
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 25px;
+            padding-bottom: 20px;
+            border-left: 2px solid #ddd;
+        }
+
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: #111;
+            border-radius: 50%;
+        }
+
+        .timeline-item.current::before {
+            background: #fa5400;
+            box-shadow: 0 0 0 4px rgba(250, 84, 0, 0.2);
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: #111;
+            font-size: 0.85rem;
+        }
+
+        .timeline-role {
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .timeline-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .highlight-stat {
+            background: linear-gradient(135deg, #f8f8f8 0%, #fff 100%);
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .highlight-stat .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #111;
+        }
+
+        .highlight-stat .label {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 600px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .quote-box {
+            background: #f9f9f9;
+            border-left: 4px solid #fa5400;
+            padding: 20px 25px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        .quote-box .author {
+            font-style: normal;
+            font-weight: 600;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .key-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .trait-tag {
+            background: #111;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .geography-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .geography-item {
+            background: #f5f5f5;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .geography-item strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: #111;
+        }
+
+        .sources {
+            background: #f9f9f9;
+            padding: 20px 30px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .sources h4 {
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .sources ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sources li {
+            margin-bottom: 5px;
+        }
+
+        .sources a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .sources a:hover {
+            color: #111;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="nav-back">&larr; Back to Announcement</a>
+        <div class="header-content">
+            <svg height="40" viewBox="0 0 69 32" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M68.56 4.05C57.32 9.05 40.4 17.65 23.93 24.86C14.42 29.05 2.63 32.04 0 29.21C-1.26 27.79 0.4 24.93 2.95 21.72C2.16 22.21 1.42 22.77 0.73 23.38C-1.71 25.84 -0.37 29.53 5.77 28.38C11.4 27.32 18.68 24.15 26.61 20.62C44.28 12.8 64.97 3.15 68.56 4.05Z"/>
+            </svg>
+            <h1>Cathy Sparks</h1>
+            <p class="title">Vice President & General Manager, Greater China</p>
+            <p class="title">大中华区副总裁兼总经理</p>
+            <p class="subtitle">Effective 2026 | 2026年生效</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Quick Stats -->
+        <section class="profile-section">
+            <div class="section-header">
+                <span class="icon">&#9733;</span>
+                <span>At a Glance | 概览</span>
+            </div>
+            <div class="bilingual-content">
+                <div class="lang-column en">
+                    <span class="lang-label">English</span>
+                    <div class="stats-grid">
+                        <div class="highlight-stat">
+                            <div class="number">25+</div>
+                            <div class="label">Years at Nike</div>
+                        </div>
+                        <div class="highlight-stat">
+                            <div class="number">4</div>
+                            <div class="label">Geographies Led</div>
+                        </div>
+                        <div class="highlight-stat">
+                            <div class="number">3B+</div>
+                            <div class="label">Athletes Served (APLA)</div>
+                        </div>
+                    </div>
+                    <div class="key-traits">
+                        <span class="trait-tag">Retail Expert</span>
+                        <span class="trait-tag">DTC Pioneer</span>
+                        <span class="trait-tag">Global Leader</span>
+                        <span class="trait-tag">Team Builder</span>
+                    </div>
+                </div>
+                <div class="lang-column zh">
+                    <span class="lang-label">中文</span>
+                    <div class="stats-grid">
+                        <div class="highlight-stat">
+                            <div class="number">25+</div>
+                            <div class="label">年Nike经验</div>
+                        </div>
+                        <div class="highlight-stat">
+                            <div class="number">4</div>
+                            <div class="label">个地区领导经验</div>
+                        </div>
+                        <div class="highlight-stat">
+                            <div class="number">30亿+</div>
+                            <div class="label">服务运动员(APLA)</div>
+                        </div>
+                    </div>
+                    <div class="key-traits">
+                        <span class="trait-tag">零售专家</span>
+                        <span class="trait-tag">DTC先驱</span>
+                        <span class="trait-tag">全球领导者</span>
+                        <span class="trait-tag">团队建设者</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Biography -->
+        <section class="profile-section">
+            <div class="section-header">
+                <span class="icon">&#9998;</span>
+                <span>Biography | 个人简介</span>
+            </div>
+            <div class="bilingual-content">
+                <div class="lang-column en">
+                    <span class="lang-label">English</span>
+
+                    <p>Cathy Sparks is a 25+ year Nike veteran who has built her career from the ground up, starting as a store athlete at Niketown Portland in 1996. Her journey from the retail floor to the executive suite exemplifies Nike's culture of developing talent from within.</p>
+
+                    <p>Throughout her tenure, Sparks has led teams across all four of Nike's geographies, developing deep expertise in marketplace transformation and consumer-led growth strategies. Her unique experience spans retail operations, direct-to-consumer business, digital commerce, and regional general management.</p>
+
+                    <p>Known for building strong teams and moving with urgency, Sparks has consistently demonstrated the ability to bring Nike's magic back to markets that need it most. Her leadership style combines operational excellence with a genuine passion for athletes and consumers.</p>
+
+                    <div class="quote-box">
+                        "Cathy has lived and worked across multiple regions, including Asia, and brings deep intuition for athletes*, consumers, and the role Nike plays at the intersection of sport and culture. She builds strong teams, moves with urgency, and knows how to bring Nike's magic back to markets that need it most."
+                        <div class="author">— Elliott Hill, President & CEO, NIKE, Inc.</div>
+                    </div>
+
+                    <p>Sparks is excited to return to Asia with her family—a region she knows well and loves—and to lead Nike's next chapter in Greater China, one of the company's most critical markets.</p>
+
+                    <h3>Education</h3>
+                    <p>Cathy Sparks attended Elon University. She is based in the Portland, Oregon Metropolitan Area.</p>
+                </div>
+                <div class="lang-column zh">
+                    <span class="lang-label">中文</span>
+
+                    <p>Cathy Sparks是一位拥有25年以上Nike经验的资深领导者，她的职业生涯从1996年在Niketown Portland担任门店员工开始，一步步成长起来。她从零售一线走向高管层的历程，充分体现了Nike内部培养人才的企业文化。</p>
+
+                    <p>在她的任期内，Sparks曾领导Nike所有四个地区的团队，在市场转型和以消费者为导向的增长战略方面积累了深厚的专业知识。她独特的经验涵盖零售运营、直接面向消费者业务、数字商务和区域综合管理。</p>
+
+                    <p>Sparks以建立强大团队和快速行动著称，她始终展现出将Nike的魔力带回最需要它的市场的能力。她的领导风格将卓越运营与对运动员和消费者的真挚热情相结合。</p>
+
+                    <div class="quote-box">
+                        "Cathy曾在多个地区生活和工作，包括亚洲，她对运动员*、消费者以及Nike在体育与文化交汇处所扮演的角色有着深刻的直觉。她建立强大的团队，行动迅速，知道如何将Nike的魔力带回最需要它的市场。"
+                        <div class="author">— Elliott Hill，NIKE, Inc. 总裁兼首席执行官</div>
+                    </div>
+
+                    <p>Sparks很高兴能与家人一起回到亚洲——一个她熟悉并热爱的地区——并领导Nike在大中华区的下一个篇章，这是公司最关键的市场之一。</p>
+
+                    <h3>教育背景</h3>
+                    <p>Cathy Sparks毕业于伊隆大学(Elon University)。她目前居住在美国俄勒冈州波特兰都会区。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Timeline -->
+        <section class="profile-section">
+            <div class="section-header">
+                <span class="icon">&#128197;</span>
+                <span>Career Timeline | 职业发展历程</span>
+            </div>
+            <div class="bilingual-content">
+                <div class="lang-column en">
+                    <span class="lang-label">English</span>
+                    <div class="timeline">
+                        <div class="timeline-item current">
+                            <div class="timeline-year">2026 - Present</div>
+                            <div class="timeline-role">VP/GM, Greater China</div>
+                            <div class="timeline-desc">Leading Nike's strategic growth in one of the company's most critical markets</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2023 - 2026</div>
+                            <div class="timeline-role">VP/GM, Asia Pacific Latin America (APLA)</div>
+                            <div class="timeline-desc">Oversaw Nike's most diverse geography, serving over 3 billion athletes*. Drove marketplace transformation and consumer-led growth.</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2020 - 2023</div>
+                            <div class="timeline-role">VP, Nike Direct, EMEA</div>
+                            <div class="timeline-desc">Led the direct-to-consumer business across Europe, Middle East, and Africa, including physical stores, Nike.com, and Nike apps</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">Prior to 2020</div>
+                            <div class="timeline-role">VP/GM, Global Nike Direct Stores and Services</div>
+                            <div class="timeline-desc">Led strategic direction, concept development, and consumer-facing services across the global Nike Store landscape</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">Earlier Roles</div>
+                            <div class="timeline-role">Multiple Senior Leadership Positions</div>
+                            <div class="timeline-desc">VP/GM, North America Nike Stores • VP, Nike Direct Retail Concepts • GM, Emerging Markets DTC • GM, Korea DTC • Director, Retail Development, Asia Pacific</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">1996</div>
+                            <div class="timeline-role">Store Athlete, Niketown Portland</div>
+                            <div class="timeline-desc">Started Nike career on the retail floor at the iconic Niketown Portland location</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lang-column zh">
+                    <span class="lang-label">中文</span>
+                    <div class="timeline">
+                        <div class="timeline-item current">
+                            <div class="timeline-year">2026年 - 至今</div>
+                            <div class="timeline-role">大中华区副总裁/总经理</div>
+                            <div class="timeline-desc">领导Nike在最关键市场之一的战略增长</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2023年 - 2026年</div>
+                            <div class="timeline-role">亚太和拉丁美洲(APLA)副总裁/总经理</div>
+                            <div class="timeline-desc">管理Nike最多元化的地区，服务超过30亿运动员*。推动市场转型和以消费者为导向的增长。</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2020年 - 2023年</div>
+                            <div class="timeline-role">EMEA Nike Direct副总裁</div>
+                            <div class="timeline-desc">领导欧洲、中东和非洲的直接面向消费者业务，包括实体店、Nike.com和Nike应用程序</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2020年之前</div>
+                            <div class="timeline-role">全球Nike直营店和服务副总裁/总经理</div>
+                            <div class="timeline-desc">领导全球Nike门店的战略方向、概念开发和面向消费者的服务</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">早期职位</div>
+                            <div class="timeline-role">多个高级领导职位</div>
+                            <div class="timeline-desc">北美Nike门店副总裁/总经理 • Nike直营零售概念副总裁 • 新兴市场DTC总经理 • 韩国DTC总经理 • 亚太区零售发展总监</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">1996年</div>
+                            <div class="timeline-role">门店员工，Niketown Portland</div>
+                            <div class="timeline-desc">在标志性的Niketown Portland门店开始Nike职业生涯</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Geographic Experience -->
+        <section class="profile-section">
+            <div class="section-header">
+                <span class="icon">&#127758;</span>
+                <span>Global Experience | 全球经验</span>
+            </div>
+            <div class="bilingual-content">
+                <div class="lang-column en">
+                    <span class="lang-label">English</span>
+                    <p>Sparks has led teams across all four of Nike's geographic regions, giving her a comprehensive understanding of global markets and local consumer needs:</p>
+                    <div class="geography-list">
+                        <div class="geography-item">
+                            <strong>North America</strong>
+                            VP/GM, North America Nike Stores
+                        </div>
+                        <div class="geography-item">
+                            <strong>EMEA</strong>
+                            VP, Nike Direct, EMEA
+                        </div>
+                        <div class="geography-item">
+                            <strong>Asia Pacific & Latin America</strong>
+                            VP/GM, APLA; GM Korea DTC
+                        </div>
+                        <div class="geography-item">
+                            <strong>Greater China</strong>
+                            VP/GM (2026 - Present)
+                        </div>
+                    </div>
+                    <p>Her experience living and working in Asia, combined with her passion for the region, makes her uniquely qualified to lead Nike's Greater China business during this critical period of rebuilding momentum and reconnecting sport and culture to the marketplace.</p>
+                </div>
+                <div class="lang-column zh">
+                    <span class="lang-label">中文</span>
+                    <p>Sparks曾领导Nike所有四个地理区域的团队，这使她对全球市场和本地消费者需求有了全面的了解：</p>
+                    <div class="geography-list">
+                        <div class="geography-item">
+                            <strong>北美</strong>
+                            北美Nike门店副总裁/总经理
+                        </div>
+                        <div class="geography-item">
+                            <strong>EMEA（欧洲、中东、非洲）</strong>
+                            Nike Direct副总裁
+                        </div>
+                        <div class="geography-item">
+                            <strong>亚太和拉丁美洲</strong>
+                            APLA副总裁/总经理；韩国DTC总经理
+                        </div>
+                        <div class="geography-item">
+                            <strong>大中华区</strong>
+                            副总裁/总经理（2026年至今）
+                        </div>
+                    </div>
+                    <p>她在亚洲生活和工作的经验，加上她对这个地区的热爱，使她在重建势能、将体育和文化与市场重新连接的关键时期，成为领导Nike大中华区业务的独特人选。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Style -->
+        <section class="profile-section">
+            <div class="section-header">
+                <span class="icon">&#9889;</span>
+                <span>Leadership Philosophy | 领导理念</span>
+            </div>
+            <div class="bilingual-content">
+                <div class="lang-column en">
+                    <span class="lang-label">English</span>
+
+                    <h3>Core Strengths</h3>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li><strong>Team Building:</strong> Known for developing strong, cohesive teams</li>
+                        <li><strong>Urgency:</strong> Moves quickly to drive results</li>
+                        <li><strong>Consumer Focus:</strong> Deep intuition for athletes* and consumers</li>
+                        <li><strong>Marketplace Transformation:</strong> Proven ability to revitalize markets</li>
+                    </ul>
+
+                    <h3>Strategic Focus Areas</h3>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li>Direct-to-Consumer excellence</li>
+                        <li>Digital and physical retail integration</li>
+                        <li>Consumer-led growth strategies</li>
+                        <li>Sport and culture connection</li>
+                    </ul>
+
+                    <h3>Mission in Greater China</h3>
+                    <p>Greater China is at a critical moment that calls for a leader who knows how to rebuild momentum, earn trust, and reconnect sport and culture to the marketplace. Sparks has been selected specifically for her proven track record of bringing "Nike's magic back to markets that need it most."</p>
+                </div>
+                <div class="lang-column zh">
+                    <span class="lang-label">中文</span>
+
+                    <h3>核心优势</h3>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li><strong>团队建设：</strong>以培养强大、有凝聚力的团队著称</li>
+                        <li><strong>紧迫感：</strong>快速行动以推动成果</li>
+                        <li><strong>消费者导向：</strong>对运动员*和消费者有深刻的直觉</li>
+                        <li><strong>市场转型：</strong>具有振兴市场的成熟能力</li>
+                    </ul>
+
+                    <h3>战略重点领域</h3>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li>直接面向消费者卓越运营</li>
+                        <li>数字和实体零售整合</li>
+                        <li>以消费者为导向的增长战略</li>
+                        <li>体育与文化连接</li>
+                    </ul>
+
+                    <h3>大中华区使命</h3>
+                    <p>大中华区正处于一个关键时刻，需要一位知道如何重建势能、赢得信任、并将体育和文化与市场重新连接的领导者。Sparks之所以被选中，正是因为她在"将Nike的魔力带回最需要它的市场"方面有着成熟的业绩记录。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sources -->
+        <section class="profile-section">
+            <div class="sources">
+                <h4>Sources | 资料来源</h4>
+                <ul>
+                    <li><a href="https://about.nike.com/en/company/people/cathy-sparks" target="_blank">Nike Official - Cathy Sparks Profile</a></li>
+                    <li><a href="https://www.businessoffashion.com/news/sports/nike-reshuffles-regional-leadership-as-it-looks-to-strengthen-key-markets/" target="_blank">Business of Fashion - Nike Reshuffles Regional Leadership</a></li>
+                    <li><a href="https://wwd.com/footwear-news/shoe-industry-news/nike-vice-president-general-manager-emea-china-apla-1238465711/" target="_blank">WWD - Nike Shifts Top Leadership</a></li>
+                    <li><a href="https://sg.finance.yahoo.com/news/nike-inc-announces-geography-leadership-211500079.html" target="_blank">Yahoo Finance - Nike Leadership Appointments</a></li>
+                    <li><a href="https://www.businesswire.com/news/home/20230307005884/en/Nike-Announces-Senior-Leadership-Shifts-to-Drive-Continued-Future-Growth" target="_blank">Business Wire - Nike Senior Leadership Shifts (2023)</a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p><a href="index.html">Back to Leadership Announcement | 返回领导层公告</a></p>
+        <p>FOR INTERNAL USE ONLY | 仅供内部使用</p>
+        <p>© 2026 NIKE, Inc.</p>
+    </footer>
+</body>
+</html>
