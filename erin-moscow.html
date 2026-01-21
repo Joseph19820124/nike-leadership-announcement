@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erin Moscow | VP, Global Merchandising | Nike</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #111;
+            background: #f5f5f5;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #111 0%, #333 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 69 32"><path fill="rgba(255,255,255,0.03)" d="M68.56 4.05C57.32 9.05 40.4 17.65 23.93 24.86C14.42 29.05 2.63 32.04 0 29.21C-1.26 27.79 0.4 24.93 2.95 21.72C2.16 22.21 1.42 22.77 0.73 23.38C-1.71 25.84 -0.37 29.53 5.77 28.38C11.4 27.32 18.68 24.15 26.61 20.62C44.28 12.8 64.97 3.15 68.56 4.05Z"/></svg>') no-repeat center;
+            background-size: 400px;
+            opacity: 0.5;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header svg {
+            height: 40px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .header .title {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.7;
+            margin-top: 8px;
+        }
+
+        .nav-back {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .nav-back:hover {
+            opacity: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .profile-section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .section-header {
+            background: #111;
+            color: white;
+            padding: 20px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-header .icon {
+            font-size: 1.3rem;
+        }
+
+        .bilingual-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        @media (max-width: 768px) {
+            .bilingual-content {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        .lang-column {
+            padding: 30px;
+        }
+
+        .lang-column.en {
+            border-right: 1px solid #eee;
+        }
+
+        @media (max-width: 768px) {
+            .lang-column.en {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+        }
+
+        .lang-label {
+            display: inline-block;
+            background: #111;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .lang-column p {
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+
+        .lang-column h3 {
+            font-size: 1.1rem;
+            margin: 25px 0 15px 0;
+            color: #111;
+            border-left: 3px solid #111;
+            padding-left: 12px;
+        }
+
+        .lang-column h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .highlight-stat {
+            background: linear-gradient(135deg, #f8f8f8 0%, #fff 100%);
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .highlight-stat .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #111;
+        }
+
+        .highlight-stat .label {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 600px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .key-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .trait-tag {
+            background: #111;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .geography-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .geography-item {
+            background: #f5f5f5;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .geography-item strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .responsibility-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        .responsibility-list li {
+            background: #f5f5f5;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border-left: 3px solid #111;
+        }
+
+        .responsibility-list li strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #111;
+        }
+
+        .family-info {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .family-info h4 {
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .sport-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .sport-tag {
+            background: #111;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: #111;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="nav-back">&larr; Back to Announcement</a>
+        <div class="header-content">
+            <svg height="40" viewBox="0 0 69 32" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M68.56 4.05C57.32 9.05 40.4 17.65 23.93 24.86C14.42 29.05 2.63 32.04 0 29.21C-1.26 27.79 0.4 24.93 2.95 21.72C2.16 22.21 1.42 22.77 0.73 23.38C-1.71 25.84 -0.37 29.53 5.77 28.38C11.4 27.32 18.68 24.15 26.61 20.62C44.28 12.8 64.97 3.15 68.56 4.05Z"/>
+            </svg>
+            <h1>Erin Moscow</h1>
+            <p class="title">Vice President, Global Merchandising</p>
+            <p class="title">全球商品副总裁</p>
+            <p class="subtitle">Effective February 2, 2026 | 2026年2月2日生效</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Quick Stats -->
+        <section class="profile-section">
+            <div class="section-header">
+                <span class="icon">&#9733;</span>
+                <span>At a Glance | 概览</span>
+            </div>
+            <div class="bilingual-content">
+                <div class="lang-column en">
+                    <span class="lang-label">English</span>
+                    <div class="stats-grid">
+                        <div class="highlight-stat">
+                            <div class="number">20+</div>
+                            <div class="label">Years in Merchandising</div>
+                        </div>
+                        <div class="highlight-stat">
+                            <div class="number">10+</div>
+                            <div class="label">Years at Nike</div>
+                        </div>
+                        <div class="highlight-stat">
+                            <div class="number">4</div>
+                            <div class="label">Geographies Led</div>
+                        </div>
+                    </div>
+                    <div class="key-traits">
+                        <span class="trait-tag">Consumer-Focused</span>
+                        <span class="trait-tag">Global Strategist</span>
+                        <span class="trait-tag">People-First Leader</span>
+                        <span class="trait-tag">Brand Builder</span>
+                    </div>
+                </div>
+                <div class="lang-column zh">
+                    <span class="lang-label">中文</span>
+                    <div class="stats-grid">
+                        <div class="highlight-stat">
+                            <div class="number">20+</div>
+                            <div class="label">年商品经验</div>
+                        </div>
+                        <div class="highlight-stat">
+                            <div class="number">10+</div>
+                            <div class="label">年Nike经验</div>
+                        </div>
+                        <div class="highlight-stat">
+                            <div class="number">4</div>
+                            <div class="label">个地区领导经验</div>
+                        </div>
+                    </div>
+                    <div class="key-traits">
+                        <span class="trait-tag">以消费者为中心</span>
+                        <span class="trait-tag">全球战略家</span>
+                        <span class="trait-tag">以人为本的领导者</span>
+                        <span class="trait-tag">品牌建设者</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Role Overview -->
+        <section class="profile-section">
+            <div class="section-header">
+                <span class="icon">&#9998;</span>
+                <span>New Role | 新职位</span>
+            </div>
+            <div class="bilingual-content">
+                <div class="lang-column en">
+                    <span class="lang-label">English</span>
+
+                    <p>Erin Moscow will join the Nike Brand Leadership Team as <strong>VP, Global Merchandising</strong>, reporting to Amy Montagne, President of Nike. In this role, Erin will oversee Merchandising as well as Business Integration and Sports Analytics.</p>
+
+                    <h3>Key Responsibilities</h3>
+                    <ul class="responsibility-list">
+                        <li>
+                            <strong>Global Merchandising Strategy</strong>
+                            Set the direction for Nike's global merchandising strategy
+                        </li>
+                        <li>
+                            <strong>Cross-Functional Collaboration</strong>
+                            Work closely with product, global, and geo merchandising teams to shape the line plan
+                        </li>
+                        <li>
+                            <strong>Assortment Frameworks</strong>
+                            Deliver consistent, marketplace-right assortment frameworks that serve athletes* globally
+                        </li>
+                        <li>
+                            <strong>Operational Excellence</strong>
+                            Accelerate operational excellence and cross-functional integration
+                        </li>
+                    </ul>
+
+                    <p>This appointment follows César Garcia's move to VP/GM, EMEA, creating this opportunity within the Nike Brand Leadership Team.</p>
+                </div>
+                <div class="lang-column zh">
+                    <span class="lang-label">中文</span>
+
+                    <p>Erin Moscow将加入Nike品牌领导团队，担任<strong>全球商品副总裁</strong>，向Nike总裁Amy Montagne汇报。在这一职位上，Erin将负责商品部门以及业务整合和体育分析。</p>
+
+                    <h3>主要职责</h3>
+                    <ul class="responsibility-list">
+                        <li>
+                            <strong>全球商品战略</strong>
+                            制定Nike全球商品战略方向
+                        </li>
+                        <li>
+                            <strong>跨职能协作</strong>
+                            与产品、全球和地区商品团队紧密合作，制定产品线计划
+                        </li>
+                        <li>
+                            <strong>品类框架</strong>
+                            提供一致的、适合市场的品类框架，服务全球运动员*
+                        </li>
+                        <li>
+                            <strong>卓越运营</strong>
+                            加速卓越运营和跨职能整合
+                        </li>
+                    </ul>
+
+                    <p>此次任命是在César Garcia调任EMEA副总裁/总经理之后，在Nike品牌领导团队中创造的机会。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Biography -->
+        <section class="profile-section">
+            <div class="section-header">
+                <span class="icon">&#128100;</span>
+                <span>Biography | 个人简介</span>
+            </div>
+            <div class="bilingual-content">
+                <div class="lang-column en">
+                    <span class="lang-label">English</span>
+
+                    <p>With more than 20 years of merchandising experience, Erin Moscow has built an impressive global career across the apparel and sport industry, always with a <strong>relentless focus on the consumer</strong>.</p>
+
+                    <p>Since joining Nike in 2014, she has held leadership roles across <strong>Global, North America, EMEA, and APLA</strong> — shaping product strategies that fuel growth, strengthen brand distinction, and meet the evolving needs of athletes and consumers worldwide.</p>
+
+                    <p>Beyond her passion for product, storytelling, and brand connection, Erin is a <strong>people-first leader</strong> who is committed to developing the next generation of merchandising talent.</p>
+
+                    <h3>Global Experience</h3>
+                    <div class="geography-list">
+                        <div class="geography-item">
+                            <strong>Global</strong>
+                            Global Merchandising Leadership
+                        </div>
+                        <div class="geography-item">
+                            <strong>North America</strong>
+                            Regional Merchandising Leadership
+                        </div>
+                        <div class="geography-item">
+                            <strong>EMEA</strong>
+                            Europe, Middle East & Africa
+                        </div>
+                        <div class="geography-item">
+                            <strong>APLA</strong>
+                            Asia Pacific & Latin America
+                        </div>
+                    </div>
+
+                    <h3>Personal Background</h3>
+                    <div class="family-info">
+                        <h4>Originally from Canada</h4>
+                        <p>Erin, her husband Elliot, and their daughters, Madison and Maisie, have lived around the world and maintain a deep connection to sport.</p>
+                        <p><strong>Family Sports Passions:</strong></p>
+                        <div class="sport-tags">
+                            <span class="sport-tag">Skiing</span>
+                            <span class="sport-tag">Fencing</span>
+                            <span class="sport-tag">Soccer</span>
+                            <span class="sport-tag">Lacrosse</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lang-column zh">
+                    <span class="lang-label">中文</span>
+
+                    <p>凭借20多年的商品经验，Erin Moscow在服装和体育行业建立了令人印象深刻的全球职业生涯，始终<strong>坚持以消费者为中心</strong>。</p>
+
+                    <p>自2014年加入Nike以来，她在<strong>全球、北美、EMEA和APLA</strong>担任领导职位——制定推动增长、加强品牌差异化、满足全球运动员和消费者不断变化需求的产品战略。</p>
+
+                    <p>除了对产品、故事讲述和品牌连接的热情外，Erin还是一位<strong>以人为本的领导者</strong>，致力于培养下一代商品人才。</p>
+
+                    <h3>全球经验</h3>
+                    <div class="geography-list">
+                        <div class="geography-item">
+                            <strong>全球</strong>
+                            全球商品领导
+                        </div>
+                        <div class="geography-item">
+                            <strong>北美</strong>
+                            区域商品领导
+                        </div>
+                        <div class="geography-item">
+                            <strong>EMEA</strong>
+                            欧洲、中东和非洲
+                        </div>
+                        <div class="geography-item">
+                            <strong>APLA</strong>
+                            亚太和拉丁美洲
+                        </div>
+                    </div>
+
+                    <h3>个人背景</h3>
+                    <div class="family-info">
+                        <h4>来自加拿大</h4>
+                        <p>Erin与丈夫Elliot以及女儿Madison和Maisie曾在世界各地生活，与体育保持着深厚的联系。</p>
+                        <p><strong>家庭体育热情：</strong></p>
+                        <div class="sport-tags">
+                            <span class="sport-tag">滑雪</span>
+                            <span class="sport-tag">击剑</span>
+                            <span class="sport-tag">足球</span>
+                            <span class="sport-tag">长曲棍球</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Qualities -->
+        <section class="profile-section">
+            <div class="section-header">
+                <span class="icon">&#9889;</span>
+                <span>Leadership Qualities | 领导特质</span>
+            </div>
+            <div class="bilingual-content">
+                <div class="lang-column en">
+                    <span class="lang-label">English</span>
+
+                    <h3>Core Strengths</h3>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li><strong>Consumer Focus:</strong> Relentless dedication to understanding and serving the consumer</li>
+                        <li><strong>Product Strategy:</strong> Proven ability to shape strategies that fuel growth</li>
+                        <li><strong>Brand Building:</strong> Expertise in strengthening brand distinction</li>
+                        <li><strong>Talent Development:</strong> Committed to developing the next generation of merchandising talent</li>
+                    </ul>
+
+                    <h3>Areas of Expertise</h3>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li>Global merchandising strategy</li>
+                        <li>Product storytelling and brand connection</li>
+                        <li>Cross-functional integration</li>
+                        <li>Marketplace-right assortment planning</li>
+                        <li>Operational excellence</li>
+                    </ul>
+                </div>
+                <div class="lang-column zh">
+                    <span class="lang-label">中文</span>
+
+                    <h3>核心优势</h3>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li><strong>消费者导向：</strong>坚持不懈地致力于理解和服务消费者</li>
+                        <li><strong>产品战略：</strong>具有制定推动增长战略的成熟能力</li>
+                        <li><strong>品牌建设：</strong>在加强品牌差异化方面具有专业知识</li>
+                        <li><strong>人才培养：</strong>致力于培养下一代商品人才</li>
+                    </ul>
+
+                    <h3>专业领域</h3>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li>全球商品战略</li>
+                        <li>产品故事讲述和品牌连接</li>
+                        <li>跨职能整合</li>
+                        <li>适合市场的品类规划</li>
+                        <li>卓越运营</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p><a href="index.html">Back to Leadership Announcement | 返回领导层公告</a></p>
+        <p>FOR INTERNAL USE ONLY | 仅供内部使用</p>
+        <p>&copy; 2026 NIKE, Inc.</p>
+    </footer>
+</body>
+</html>
